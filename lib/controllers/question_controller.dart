@@ -54,9 +54,14 @@ class QuestionController extends GetxController
       });
 
     _animationController.forward().whenComplete(nextQuestion);
-
     _pageController = PageController();
     super.onInit();
+  }
+
+  void onClose() {
+    super.onClose();
+    _animationController.dispose();
+    _pageController.dispose();
   }
 
   void checkAns(Question question, int selectedIndex) {
