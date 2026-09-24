@@ -43,7 +43,7 @@ class Option extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "{$index + 1}. $text",
+                  "$index. $text",
                   style: TextStyle(color: getTheRightColor(), fontSize: 16),
                 ),
                 Container(
