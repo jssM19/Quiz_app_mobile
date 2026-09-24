@@ -11,6 +11,9 @@ class QuestionController extends GetxController
 
   Animation get animation => _animation;
 
+  PageController _pageController = PageController();
+  PageController get pageController => _pageController;
+
   final List<Question> _questions = sampleData
       .map(
         (question) => Question(
@@ -62,6 +65,6 @@ class QuestionController extends GetxController
     if (_correctAns == _selectedAns) _numOfCorrectAns++;
 
     _animationController.stop();
-    updated();
+    update();
   }
 }
