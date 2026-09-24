@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:quiz_app/controllers/question_controller.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 import 'package:quiz_app/constans.dart';
 
 class ScoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    QuestionController _qnController = Get.put(QuestionController());
     return Scaffold(
       body: Stack(
+        fit: StackFit.expand,
         children: [
           SizedBox(
             width: double.infinity,
@@ -15,16 +19,16 @@ class ScoreScreen extends StatelessWidget {
           ),
           Column(
             children: [
-              Spacer(),
+              Spacer(flex: 3),
               Text(
                 "Score",
                 style: Theme.of(
                   context,
                 ).textTheme.headlineMedium?.copyWith(color: kSecondaryColor),
               ),
-              Spacer(),
+              Spacer(flex: 3),
               Text(
-                "30/40",
+                "${_qnController.correctAns * 10}/${_qnController.questions.length * 10}",
                 style: Theme.of(
                   context,
                 ).textTheme.headlineLarge?.copyWith(color: kSecondaryColor),

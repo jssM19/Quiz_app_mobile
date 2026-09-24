@@ -1,6 +1,7 @@
 // We use the get package for our state management.
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quiz_app/screens/score/score_screen.dart';
 import 'package:quiz_app/modelos/question.dart';
 
 class QuestionController extends GetxController
@@ -93,11 +94,9 @@ class QuestionController extends GetxController
       // Then start it again
       // Once timer is finish go to the next qn
       _animationController.forward().whenComplete(nextQuestion);
-    } else {
-      // Get package provide us simple way to naviigate another page
-      // Get.to(ScoreScreen());
-      'falta score recuerda`';
     }
+
+    Get.to(ScoreScreen());
   }
 
   void updateTheQnNum(int index) {
