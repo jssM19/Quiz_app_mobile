@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/constans.dart';
-
+import 'package:quiz_app/screens/quiz/quiz_screen.dart';
 import 'package:websafe_svg/websafe_svg.dart';
+import 'package:get/get.dart';
 
 const double kDefaultPadding = 10.0;
 
@@ -48,11 +49,10 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   Spacer(),
                   InkWell(
-                    /* onTap() {
-
-                  },*/
+                    onTap: () => Get.to(QuizScreen()),
                     child: Container(
                       width: double.infinity,
+                      alignment: Alignment.center,
                       padding: const EdgeInsets.all(kDefaultPadding * 0.75),
                       decoration: BoxDecoration(
                         gradient: kPrimaryGradient,

@@ -94,9 +94,9 @@ class QuestionController extends GetxController
       // Then start it again
       // Once timer is finish go to the next qn
       _animationController.forward().whenComplete(nextQuestion);
+    } else {
+      Get.to(ScoreScreen());
     }
-
-    Get.to(ScoreScreen());
   }
 
   void updateTheQnNum(int index) {
